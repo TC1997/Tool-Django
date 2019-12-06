@@ -21,6 +21,23 @@ class Squirrel(models.Model):
     Chasing = models.BooleanField(default=False)
     Climbing = models.BooleanField(default=False)
     Eating = models.BooleanField(default=False)
+    Foraging = models.BooleanField(default=False)
+    Other_Activities = models.TextField(blank=True)
+    Kuks = models.BooleanField(default=False)
+    Quaas = models.BooleanField(default=False)
+    Moans = models.BooleanField(default=False)
+    Tail_Flags = models.BooleanField(default=False)
+    Tail_Twitches = models.BooleanField(default=False)
+    Approaches = models.BooleanField(default=False)
+    Indifferent = models.BooleanField(default=False)
+    Runs_From = models.BooleanField(default=False)
+    Other_Interactions = models.TextField(blank=True)
+    Lat_Long = models.TextField()
+    Zip_Codes = models.CharField(max_length=30, blank=True)
+    Community_Districts = models.CharField(max_length=30)
+    Borough_Boundaries = models.CharField(max_length=30)
+    City_Council_Districts = models.CharField(max_length=30)
+    Police_Precincts = models.CharField(max_length=30)
 
 
     def __str__(self):
