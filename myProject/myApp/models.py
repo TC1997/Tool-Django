@@ -20,6 +20,7 @@ class Squirrel(models.Model):
     Running = models.BooleanField(default=False)
     Chasing = models.BooleanField(default=False)
     Climbing = models.BooleanField(default=False)
+    Eating = models.BooleanField(default=False)
 
 
     def __str__(self):
