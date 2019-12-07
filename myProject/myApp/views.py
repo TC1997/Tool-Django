@@ -40,4 +40,13 @@ def update(request, unique_squirrel_id):
             form.save()
         return redirect('/sightings')
 
+def create(request):
+    if request.method == 'GET':
+        form = SquirrelForm1()
+        return render(request, 'myApp/form1.html', {'form': form})
+    else:
+        form = SquirrelForm1(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/sightings')
 
