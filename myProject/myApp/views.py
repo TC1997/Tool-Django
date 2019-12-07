@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 # Create your views here.
 
 from django.shortcuts import render, redirect
@@ -23,3 +23,10 @@ def map(request):
             break
     context = {'sightings': sightings}
     return render(request, 'myApp/map.html', context)
+
+def list(request):
+    squirrel_list = Squirrel.objects.all()
+    context = {'squirrel_list': squirrel_list}
+    return render(request, 'myApp/list.html', context)
+
+
