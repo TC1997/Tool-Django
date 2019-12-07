@@ -29,4 +29,15 @@ def list(request):
     context = {'squirrel_list': squirrel_list}
     return render(request, 'myApp/list.html', context)
 
+def update(request, unique_squirrel_id):
+    squirrel = Squirrel.objects.get(pk=unique_squirrel_id)
+    if request.method == 'GET':
+        form = SquirrelForm(instance=squirrel)
+        return render(request, 'myApp/form.html', {'form': form})
+    else:
+        form = SquirrelForm(request.POST, instance=squirrel)
+        if form.is_valid():
+            form.save()
+        return redirect('/sightings')
+
 
