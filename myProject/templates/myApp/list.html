@@ -23,6 +23,10 @@
                     <td>{{squirrel.Unique_Squirrel_ID}}</td>
                     <td>{{squirrel.Latitude}}</td>
                     <td>{{squirrel.Longitude}}</td>
+                    <td>
+                        <a href="{% url 'update' squirrel.id %}" class="btn text-secondary px-0">
+                            <i class="fal fa-edit fa-lg"></i>
+                        </a>
 
                 </tr>
             {% endfor %}
