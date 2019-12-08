@@ -57,31 +57,36 @@ def delete(request, unique_squirrel_id):
 
 def stats(request):
     squirrel_list = Squirrel.objects.all()
-    latitude_ = []
-    longitude_ = []
+    age_ = []
+    #longitude_ = []
     location_ = []
     other_activities_ = []
     primary_fur_color_ = []
     for squirrel in squirrel_list:
-        latitude_.append(squirrel.Latitude)
-        longitude_.append(squirrel.Longitude)
+        age_.append(squirrel.Age)
+        #longitude_.append(squirrel.Longitude)
         location_.append(squirrel.Location)
         other_activities_.append(squirrel.Other_Activities)
         primary_fur_color_.append(squirrel.Primary_Fur_Color)
-    MLati = '1'#np.mean(np.array(latitude_).astype(np.float))
-    MLongi ='2' #np.mean(np.array(longitude_).astype(np.float))
 
-
+    def mode_(lst):
+        dic1={}
+        s=set(lst)
+        for i in s:
+            ct=lst.count(i)
+            dic1[i]=ct
+        return max(dic1,key=dic1.get)
 
     def count_(lst):
         return len([x for x in lst if x])
 
+    Mage =mode_(age_)
     NLoca = count_(location_)
     NOA = count_(other_activities_)
     NPFC = count_(primary_fur_color_)
     dict_ = {
-        'Mean_of_Latitude': MLati,
-        'Mean_of_Longitude': MLongi,
+        'Most_frequent_age': Mage,
+        #'Mean_of_Longitude': MLongi,
         'Count_of_Location': NLoca,
         'Count_of_Other_Activities': NOA,
         'Count_of_Primary_Fur_Color': NPFC
