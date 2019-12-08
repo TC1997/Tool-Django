@@ -58,13 +58,13 @@ def delete(request, unique_squirrel_id):
 def stats(request):
     squirrel_list = Squirrel.objects.all()
     age_ = []
-    #longitude_ = []
+    forage_ = []
     location_ = []
     other_activities_ = []
     primary_fur_color_ = []
     for squirrel in squirrel_list:
         age_.append(squirrel.Age)
-        #longitude_.append(squirrel.Longitude)
+        forage_.append(squirrel.Foraging)
         location_.append(squirrel.Location)
         other_activities_.append(squirrel.Other_Activities)
         primary_fur_color_.append(squirrel.Primary_Fur_Color)
@@ -80,13 +80,22 @@ def stats(request):
     def count_(lst):
         return len([x for x in lst if x])
 
+    def percentage_(lst):
+        ct = 0
+        for i in range(0,len(lst)):
+            if lst[i] == True:
+                ct += 1
+        per = ct/len(lst)
+        return per
+
     Mage =mode_(age_)
+    Pforage = percentage_(forage_)
     NLoca = count_(location_)
     NOA = count_(other_activities_)
     NPFC = count_(primary_fur_color_)
     dict_ = {
         'Most_frequent_age': Mage,
-        #'Mean_of_Longitude': MLongi,
+        'P_forage': Pforage,
         'Count_of_Location': NLoca,
         'Count_of_Other_Activities': NOA,
         'Count_of_Primary_Fur_Color': NPFC
