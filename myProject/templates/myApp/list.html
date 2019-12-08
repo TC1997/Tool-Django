@@ -27,7 +27,13 @@
                         <a href="{% url 'update' squirrel.id %}" class="btn text-secondary px-0">
                             <i class="fal fa-edit fa-lg"></i>
                         </a>
-
+                        <form action="{% url 'delete' squirrel.id %}" method="post" class="d-inline">
+                           <!-- {% csrf_token %}-->
+                            <button type="submit" class="btn">
+                                <i class="fal fa-trash-alt fa-lg text-danger float-right"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
