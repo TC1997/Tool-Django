@@ -50,3 +50,8 @@ def create(request):
             form.save()
         return redirect('/sightings')
 
+def delete(request, unique_squirrel_id):
+    squirrel = Squirrel.objects.get(pk=unique_squirrel_id)
+    squirrel.delete()
+    return redirect('/sightings')
+
