@@ -24,6 +24,11 @@ class SquirrelForm1(forms.ModelForm):
                   'Kuks', 'Quaas', 'Moans', 'Tail_Flags', 'Tail_Twitches',
                   'Approaches', 'Indifferent', 'Runs_From')
 
-    def __init__(self, *args, **kwargs):
-        super(SquirrelForm1, self).__init__(*args, **kwargs)
-        self.fields['Date'].required = True
+        widgets = {'Location': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+                   'Specific_Location': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+                   'Other_Activities': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+                   }
+
+        def __init__(self, *args, **kwargs):
+            super(SquirrelForm1, self).__init__(*args, **kwargs)
+            self.fields['Date'].required = True
