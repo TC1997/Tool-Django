@@ -1,0 +1,26 @@
+{% extends 'myApp/base.html' %}
+{% block content %}
+
+<table class="table table-boderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Mean of Latitude</td>
+            <td>Mean of Longitude</td>
+            <td>Count of Location</td>
+            <td>Count of Other Activities</td>
+            <td>Count of Primary Fur Color</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{Mean_of_Latitude}}</td>
+            <td>{{Mean_of_Longitude}}</td>
+            <td>{{Count_of_Location}}</td>
+            <td>{{Count_of_Other_Activities}}</td>
+            <td>{{Count_of_Primary_Fur_Color}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endblock content %}
