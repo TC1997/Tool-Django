@@ -9,8 +9,7 @@
 2) We can see all sighings listed in one page, including sighting’s information: Squirrel Id, Latitude and Longitude.
   Located at: /sightings 
 3) Next to each sighting, there is a link to edit the sighting. Located at: /sightings/<unique-squirrel-id>
-4) There’s a link at the top right of the ‘sighting’ page, which allows us to add a new sighting.
-  The information that’s required to enter are: Latitude, Longitude, Unique Squirrel ID, Shift and Date; whereas the optional fields are: Age, Primary Fur Color, Location, Specific Location and Other Activities. The remaining fields are checkboxes.
+4) There’s a link at the top right of the ‘sighting’ page, which allows us to add a new sighting. The information that’s required to enter are: Latitude, Longitude, Unique Squirrel ID, Shift and Date; whereas the optional fields are: Age, Primary Fur Color, Location, Specific Location and Other Activities. The remaining fields are checkboxes.
   Located at: /sightings/add
 5) We selected five attributes in the dataset and calculated a particular stats over all sightings for each attribute.
   Located at: /sightings/stats
