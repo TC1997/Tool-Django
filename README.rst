@@ -3,6 +3,6 @@
 -Group name and Section
   Project Group 32, Section 2
 -Team member and UNIs
-  UNIs: [tc3026, ]
+  UNIs: [tc3026, cz2576]
 -Server link
   https://my-project-tc-256223.appspot.com/sightings/
