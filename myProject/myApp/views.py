@@ -30,7 +30,7 @@ def list(request):
     return render(request, 'myApp/list.html', context)
 
 def update(request, unique_squirrel_id):
-    squirrel = Squirrel.objects.get(pk=unique_squirrel_id)
+    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=unique_squirrel_id)
     if request.method == 'GET':
         form = SquirrelForm(instance=squirrel)
         return render(request, 'myApp/form.html', {'form': form})
@@ -51,7 +51,7 @@ def create(request):
         return redirect('/sightings')
 
 def delete(request, unique_squirrel_id):
-    squirrel = Squirrel.objects.get(pk=unique_squirrel_id)
+    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=unique_squirrel_id)
     squirrel.delete()
     return redirect('/sightings')
 
