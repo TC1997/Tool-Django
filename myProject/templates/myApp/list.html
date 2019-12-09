@@ -25,11 +25,11 @@
                     <td>{{squirrel.Latitude}}</td>
                     <td>{{squirrel.Longitude}}</td>
                     <td>
-                        <a href="{% url 'update' squirrel.id %}" class="btn text-secondary px-0">
+                        <a href="{% url 'update' squirrel.Unique_Squirrel_ID %}" class="btn text-secondary px-0">
                             <i class="fal fa-edit fa-lg"></i>
                         </a>
-                        <form action="{% url 'delete' squirrel.id %}" method="post" class="d-inline">
-                           <!-- {% csrf_token %}-->
+                        <form action="{% url 'delete' squirrel.Unique_Squirrel_ID %}" method="post" class="d-inline">
+                            {% csrf_token %}
                             <button type="submit" class="btn">
                                 <i class="fal fa-trash-alt fa-lg text-danger float-right"></i>
                             </button>
