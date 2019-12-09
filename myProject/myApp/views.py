@@ -4,7 +4,6 @@ from django.http import HttpResponse
 
 from django.shortcuts import render, redirect
 from .forms import SquirrelForm, SquirrelForm1
-import numpy as np
 
 from .models import Squirrel
 
