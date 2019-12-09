@@ -1,5 +1,4 @@
 {% extends 'myApp/base.html' %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -7,7 +6,11 @@
     {% csrf_token %}
     <h2 class="display-4 font-italic pb-4 mb-4 font-weight-bold border-bottom" style="font-family: serif; text-align: left; font-size: 50px">Edit</h2>
 
-    {{form|crispy}}
+   <table align="center" style="width:800px">
+       {{form.as_table}}
+   </table>
+
+
 
     <hr class="mt-4 mb-4">
 
@@ -18,3 +21,4 @@
 </form>
 
 {% endblock content %}
+
