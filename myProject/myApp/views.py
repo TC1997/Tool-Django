@@ -50,11 +50,6 @@ def create(request):
             form.save()
         return redirect('/sightings')
 
-def delete(request, unique_squirrel_id):
-    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=unique_squirrel_id)
-    squirrel.delete()
-    return redirect('/sightings')
-
 def stats(request):
     squirrel_list = Squirrel.objects.all()
     age_ = []

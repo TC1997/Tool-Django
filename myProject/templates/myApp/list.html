@@ -10,7 +10,7 @@
                 <td class="pb-3" style="font-family: 'serif'"><i class="fad fa-acorn mr-2" style="color:#795C32"></i>Squirrel ID</td>
                 <td class="pb-3" style="font-family: 'serif'"><i class="fas fa-globe-americas mr-2" style="color:#795C32"></i>Latitude</td>
                 <td class="pb-3" style="font-family: 'serif'"><i class="fas fa-globe-americas mr-2" style="color:#795C32"></i>Longitude</td>
-               <td class="pb-3">
+               <td class="pb-3" style="float:center">
                     <a href="{% url 'create' %}" class="btn btn-outline-success">
                         <i class="fas fa-plus" ></i> Add
                     </a>
@@ -24,16 +24,10 @@
                     <td>{{squirrel.Unique_Squirrel_ID}}</td>
                     <td>{{squirrel.Latitude}}</td>
                     <td>{{squirrel.Longitude}}</td>
-                    <td>
+                    <td style="text-align:`center">
                         <a href="{% url 'update' squirrel.Unique_Squirrel_ID %}" class="btn text-secondary px-0">
                             <i class="fal fa-edit fa-lg"></i>
                         </a>
-                        <form action="{% url 'delete' squirrel.Unique_Squirrel_ID %}" method="post" class="d-inline">
-                            {% csrf_token %}
-                            <button type="submit" class="btn">
-                                <i class="fal fa-trash-alt fa-lg text-danger float-right"></i>
-                            </button>
-                        </form>
                     </td>
                 </tr>
             {% endfor %}
