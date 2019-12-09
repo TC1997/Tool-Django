@@ -1,0 +1,26 @@
+{% extends 'myApp/base.html' %}
+{% block content %}
+
+<table class="table table-boderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Most frequent age</td>
+            <td>Percentage of Squirrels foraging</td>
+            <td>Count of Location</td>
+            <td>Count of Other Activities</td>
+            <td>Count of Primary Fur Color</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{Most_frequent_age}}</td>
+            <td>{{P_forage}}</td>
+            <td>{{Count_of_Location}}</td>
+            <td>{{Count_of_Other_Activities}}</td>
+            <td>{{Count_of_Primary_Fur_Color}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endblock content %}
