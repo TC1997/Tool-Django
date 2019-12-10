@@ -29,7 +29,7 @@ class SquirrelForm(forms.ModelForm):
         self.fields['Date'].required = True
 
 
-
+# this form only for /sightings/add
 class SquirrelForm1(forms.ModelForm):
 
     class Meta:
