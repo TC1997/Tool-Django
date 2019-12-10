@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Squirrel(models.Model):
+class Squirrel(models.Model): # all 36 attributes
     Longitude = models.CharField(max_length=30)
     Latitude = models.CharField(max_length=30)
     Unique_Squirrel_ID = models.CharField(max_length=30)
